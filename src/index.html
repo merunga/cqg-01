@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Todos los campeones de League of Legends (LOL) en un solo lugar, conoce sus roles, poderes y habilidades">
+  <meta name="theme-color" content="#01050B" />
+  <title>Champions | LOL</title>
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+  <!-- css  -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400&family=Marcellus&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Pagina de bienvenida -->
+  <div class="welcome">
+    <div class="welcome__container">
+      <img class="welcome__container__logo" src="assets/img/logo.webp" alt="Logo">
+      <img class="welcome__container__img" src="assets/img/female.png" alt="female champion">
+      <p class="welcome__container__resume"><span class="welcome__container__resume--text">EXPLORA
+          LOL</span><br>CONVIÉRTETE EN
+        LEYENDA</p>
+      <button class="welcome__container__button">CONOCE A LOS CAMPEONES</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav class="nav">
+      <input type="checkbox" id="nav__checkbox" class="nav__checkbox">
+      <label for="nav__checkbox" class="nav__toggle"><span class="menu">&#9776;</span></label>
+      <ul class="nav__menu">
+        <li class="menu__logo">
+          <img src="assets/img/icon.png" alt="icon">
+          <img src="assets/img/logo.webp" alt="Logo">
+        </li>
+        <li href="#" class="button__modal">STATS SEASON 12</li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Modal   -->
+  <div class="modal">
+    <div class="modal__content">
+    </div>
+    <div class="modal__content__suggested">
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <main>
+    <form>
+      <select name="filter" id="filterlist">
+        <option value="FILTER BY">FILTER BY</option>
+        <option value="Assassin">ASSASSIN</option>
+        <option value="Mage">MAGE</option>
+        <option value="Support">SUPPORT</option>
+        <option value="Tank">TANK</option>
+        <option value="Fighter">FIGHTER</option>
+        <option value="Marksman">MARKSMAN</option>
+      </select>
+
+      <label for="orderlist"></label>
+      <select name="order" id="orderlist">
+        <option value="SORT BY">SORT BY</option>
+        <option value="A-Z">A-Z</option>
+        <option value="Z-A">Z-A</option>
+        <option value="MAX ATTACK">MAX ATTACK</option>
+        <option value="MAX DEFENSE">MAX DEFENSE</option>
+        <option value="MAX MAGIC">MAX MAGIC</option>
+        <option value="MAX DIFFICULTY">MAX DIFFICULTY</option>
+      </select>
+
+    </form>
+  </main>
+
+  <!-- Pie de pagina -->
+  <footer>
+    <img src="assets/img/logoRiot.png" alt="logo riot games">
+  </footer>
+
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>

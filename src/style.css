@@ -1,0 +1,818 @@
+:root {
+    /* colors */
+    --dark-color: #01050B;
+    --primary-color: #010A13;
+    --third-color: #0A1428;
+    --light-color: #D9D9D9;
+    --secondary-color-light: #C8AA6E;
+    --secondary-color: #C89B3C;
+    --secondary-color-dark: #785A28;
+    /* fonts */
+    --font-serif: 'Marcellus', serif;
+    --font-sans: 'Catamaran', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/******* Página de bienvenida *******/
+.welcome {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: inset;
+    border: var(--secondary-color) 0.1rem solid;
+    box-shadow: var(--secondary-color) inset 0rem 0rem 2rem;
+    background-image: url("assets/img/fondo1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome__container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(1, 5, 11, 0.6);
+}
+
+.welcome__container__logo {
+    margin: 2rem 0rem 0rem 0rem;
+    width: 80%;
+    height: fit-content;
+}
+
+.welcome__container__img {
+    padding: 0.5rem 0rem 0.5rem 0rem;
+    width: 60%;
+    height: fit-content;
+}
+
+.welcome__container__resume--text {
+    color: var(--secondary-color-light);
+    font-size: 3rem;
+    text-shadow: 0rem 0rem 2rem var(--secondary-color);
+}
+
+.welcome__container__resume {
+    padding: 0rem 0rem 0rem 0rem;
+    font-family: var(--font-serif);
+    font-weight: bold;
+    margin: 1rem;
+    color: var(--light-color);
+    text-shadow: 0rem 0rem 1rem var(--dark-color);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.welcome__container__button {
+    margin: 1rem 1rem 3rem 1rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.9rem 2rem 0.9rem 2rem;
+    color: var(--secondary-color-light);
+    font-size: 1.8rem;
+    font-family: var(--font-serif);
+    border: none;
+    font-weight: bolder;
+    background-color: var(--primary-color);
+    box-shadow: var(--secondary-color-light) 0rem 0rem 2rem;
+    cursor: pointer;
+    transform: skewX(-15deg);
+}
+
+.welcome__container__button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/******* Header *******/
+header {
+    display: none;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.nav{
+    width: 100%;
+    background: rgba(1, 5, 11, 0.9) url("assets/img/fondo2.jpg");
+    background-position: center;
+    background-blend-mode: darken;
+    border-bottom: var(--secondary-color-dark) 0.1rem solid;
+}
+
+.nav__toggle{
+    position: absolute;
+    cursor: pointer;
+    right: 2rem;
+    top: 3.7rem;
+}
+
+.menu{
+    color: var(--secondary-color);
+    font-size: 3rem;
+    margin-top:0.3rem;
+}
+
+.nav__checkbox{
+    display: none;
+}
+
+.nav__menu{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav__menu li{
+    list-style-type: none;
+    display: none;
+}
+
+.nav__menu li:first-child{
+    margin-right: 5rem;
+    display: block;
+}
+
+.menu__logo{
+    height:8rem;  
+    margin:2rem; 
+}
+
+.menu__logo img{
+    height:100%;
+}
+
+#nav__checkbox:checked~ ul.nav__menu li{
+    display: block;
+}
+
+.button__modal{
+    width: 100%;
+    padding: 2rem;
+    color: var(--secondary-color);
+    font-size: 2rem;
+    border-top: var(--secondary-color-dark) 0.1rem solid;
+    background-color: var(--third-color);
+    cursor: pointer;
+}
+
+/******* Main *******/
+main {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: var(--primary-color);
+}
+
+/* Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    top: 2rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 5, 11, 0.9);
+    overflow: auto;
+}
+
+.modal__content, .modal__content__suggested{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-color);
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    border: var(--secondary-color) 0.1rem solid;
+}
+
+.modal__content__suggested{
+    display: none;
+}
+
+.modal__content__close, .modal__content__closes {
+    color: var(--secondary-color-light);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal__content__close:hover, .modal__content__closes:hover {
+    color: var(--secondary-color);
+}
+
+.modal__content--title {
+    padding-top: 1rem;
+    font-family: var(--font-serif);
+    color: var(--secondary-color);
+    font-size: 4rem;
+    text-align: center;
+}
+
+.modal__content-img {
+    width: 80%;
+}
+
+
+.modal__content--resume,
+.modal__content__champions {
+    padding: 0rem 0.1rem 2rem 0.1rem;
+    text-align: center;
+    font-family: var(--font-sans);
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
+    color: var(--light-color);
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+
+.modal__content--text {
+    padding: 0rem;
+    font-family: var(--font-sans);
+    color: var(--secondary-color-light);
+    font-size: 1.5rem;
+}
+
+.modal__content--text--stats {
+    color: var(--light-color);
+}
+
+.modal__content__button {
+    margin: 3rem 0rem 1rem 0rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-family: var(--font-serif);
+    border: none;
+    font-weight: 900;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    transform: skewX(-15deg);
+}
+
+.modal__content__button:hover{
+    color: var(--secondary-color);
+    background-color: var(--dark-color);
+    box-shadow: var(--secondary-color-light) 0rem 0rem .5rem;
+}
+
+.modal__image__series{
+   width: 100%;
+   margin: 2rem 0 3rem 0;
+}
+
+/* List */
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#orderlist,
+#filterlist {
+    margin: 2rem 0rem 1rem 0rem;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    text-align-last: center;
+    width: 70%;
+    color: var(--secondary-color-light);
+    background-color: var(--primary-color);
+    border: none;
+    border-bottom: var(--secondary-color) solid 0.1rem;
+}
+
+/******* Flip cards *******/
+.containercards {
+    position: relative;
+    cursor: pointer;
+    transition: all 600ms;
+    transform-style: preserve-3d;
+}
+
+.containercards.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.box {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+/* Frontcard */
+.card {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    width: 30rem;
+    height: 35rem;
+    background-size: 170% 83.5%;
+    background-position: 65% 0%;
+    text-align: center;
+    border: var(--secondary-color) 0.1rem solid;
+    box-shadow: 0rem 0rem 5rem 2rem rgba(1, 5, 11) inset;
+    overflow: hidden;
+}
+
+
+.card__imgrol {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 6rem;
+    background-color: rgba(1, 5, 11, 0.8);
+    box-shadow: 0rem 0rem 2rem 0.5rem var(--dark-color);
+}
+
+.card__content {
+    position: absolute;
+    bottom: 0rem;
+    width: 100%;
+    background-color: rgba(1, 5, 11, 0.8);
+    box-shadow: inset 0rem 0rem 3rem var(--dark-color);
+}
+
+.card__content__name {
+    padding-top: 1rem;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 2.7rem;
+    letter-spacing: 0.3rem;
+    color: var(--secondary-color);
+    text-shadow: 0rem 0rem 0.5rem var(--secondary-color-light);
+}
+
+.card__content__title {
+    padding-bottom: 1rem;
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    color: var(--secondary-color-light);
+}
+
+/* Backcard */
+.cardback {
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    width: 30rem;
+    height: 35rem;
+    text-align: center;
+    background-color: var(--third-color);
+    border: var(--secondary-color) 0.2rem solid;
+    transform: rotateY(180deg);
+}
+
+.cardback__box__name {
+    margin: 1.5rem 1.5rem 0.3rem 1.5rem;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+    color: var(--secondary-color);
+}
+
+.cardback__box__rol {
+    margin: 0rem 3rem 1.3rem 3rem;
+    padding-right: 0rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    color: var(--third-color);
+    background-color: var(--secondary-color-light);
+    border-radius: 1rem;
+}
+
+.cardback__box2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cardback__box2__box {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-color);
+    border-radius: 10rem;
+    height: min-content;
+    margin: 0.3rem 1rem 1rem 1rem;
+}
+
+.cardback__box2--icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0%;
+    border: var(--secondary-color) solid 0.3rem;
+    border-radius: 50%;
+}
+
+.cardback__box2__info {
+    width: 5rem;
+    margin: 0%;
+    border-radius: 1rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--third-color);
+    text-align: center;
+}
+
+.cardback__box3__table {
+    position: absolute;
+    bottom: 7%;
+    left: 10%;
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+}
+
+.cardback__box3__table--title {
+    margin: 0%;
+    color: var(--primary-color);
+    font-weight: bolder;
+    font-size: 1.5rem;
+    background-color: var(--secondary-color);
+}
+
+.cardback__box3__table--data {
+    margin: 0%;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    background-color: var(--light-color);
+}
+
+/******* Footer *******/
+Footer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    font-family: var(--font-sans);
+    font-weight: bolder;
+    font-size: 2rem;
+    color: var(--third-color);
+    background-color: var(--secondary-color);
+}
+
+footer img{
+    height: 4rem;
+}
+
+/******* Responsive ******/
+
+/* Mobile */
+
+@media (max-width: 321px) {
+
+    .welcome__container__logo {
+        margin: 2rem 0rem 0rem 0rem;
+        width: 70%;
+        height: fit-content;
+    }
+
+    .welcome__container__img {
+        padding: 0.5rem 0rem 0.5rem 0rem;
+        width: 40%;
+        height: fit-content;
+    }
+
+    .welcome__container__resume--text {
+        font-size: 2.5rem;
+    }
+
+    .welcome__container__resume {
+        padding: 0rem 0rem 0rem 0rem;
+        margin: 1rem;
+        font-size: 2rem;
+    }
+
+    .welcome__container__button {
+        margin: 1rem 0rem 3rem 0rem;
+        padding: 0.9rem 2rem 0.9rem 2rem;
+        font-size: 1.5rem
+    }
+
+    .modal__content__close, .modal__content__closes {
+        font-size: 2rem;
+    }
+    
+    .modal__content-img {
+        padding: 1rem 0rem 1rem 0rem;
+        width: 50%;
+    }
+    
+    .modal__image__series{
+        width: 60%;
+     }
+
+    .modal__content--resume,
+    .modal__content__champions {
+        font-size: 1.8rem;
+    }
+    
+    .modal__content--title {
+        font-size: 3rem;
+    }
+
+    .modal__content--text {
+        font-size: 1.5rem;
+    }
+    
+    .modal__content__button {
+        font-size: 1.5rem;
+    }
+
+    .menu__logo img{
+        height:90%;
+    }
+
+    
+    .card {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        width: 25rem;
+        height: 28.5rem;
+    }
+
+    .card__imgrol {
+        width: 6rem;
+    }
+    
+    .card__content__name {
+        font-size: 2rem;
+    }
+
+    .card__content__title {
+        font-size: 1rem;
+    }
+    
+    .cardback {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        width: 25rem;
+        height: 28.5rem;
+    }
+    
+    .cardback__box__name {
+        font-size: 2rem;
+    }
+    
+    .cardback__box__rol {
+        margin: 0rem 3rem 1.3rem 3rem;
+        font-size: 1.5rem;
+        
+    }
+    
+    .cardback__box2__info {
+        font-size: 1.5rem;
+    }
+
+    .cardback__box2--icon {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+    
+    .cardback__box3__table--title {
+        font-size: 1.1rem;
+    }
+    
+    .cardback__box3__table--data {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Tablet y PC */
+
+@media (min-width: 767px) {
+
+    .welcome__container__logo {
+        width: 60%;
+    }
+
+    .welcome__container__img {
+        padding: 3rem 0rem 0rem 0rem;
+        width: 40%;
+        height: fit-content;
+    }
+
+    .welcome__container__resume--text {
+        font-size: 4rem;
+    }
+    
+    .welcome__container__resume {
+        margin: 1rem;
+        font-size: 3rem;
+    }
+    
+    .welcome__container__button {
+        font-size: 2rem;
+    }
+
+    .modal__content__close, .modal__content__closes {
+        font-size: 3rem;
+    }
+    
+    .modal__content-img {
+        width: 40%;
+    }
+    
+    .modal__image__series{
+        width: 60%;
+     }
+
+    .modal__content--resume,
+    .modal__content__champions {
+        font-size: 2rem;
+    }
+    
+    .modal__content--text {
+        font-size: 2rem;
+    }
+    
+    .modal__content__button {
+        font-size: 1.8rem;
+    }
+
+    form {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #orderlist,
+    #filterlist {
+        margin: 2rem 3rem 2rem 3rem;
+        padding: 0.5rem 0rem 0.5rem 0rem;
+        width: 40%;
+    }
+
+    .card {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 4rem;
+        width: 30rem;
+        height: 35rem;
+        background-size: 140% 78.5%;
+    }
+
+
+    .card:hover {
+        width: 30.5rem;
+        height: 35.5rem;
+        box-shadow: 0rem 0rem 2rem #C89B3C;
+    }
+
+    .card__imgrol {
+        width: 7rem;
+    }
+
+    .card__content__name {
+        font-size: 2.5rem;
+    }
+
+    .card__content__title {
+        font-size: 1.5rem;
+    }
+
+    .cardback {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 4rem;
+        width: 30rem;
+        height: 35rem;
+    }
+
+}
+
+@media (min-width: 1023px) {
+
+    .welcome {
+        background-position: top;
+    }
+
+    .welcome__container__logo {
+        margin-top: 4rem;
+        width: 30%;
+        height: fit-content;
+    }
+
+    .welcome__container__img {
+        display: none;
+    }
+    
+    .welcome__container__resume--text {
+        font-size: 4rem;
+    }
+    
+    .welcome__container__resume {
+        font-size: 3rem;
+    }
+
+    .welcome__container__button {
+        margin-bottom: 6rem;
+        padding: 1rem 5rem 1rem 5rem;
+        font-size: 2rem;
+    }
+
+    .modal__content__close, .modal__content__closes {
+        font-size: 3rem;
+    }
+    
+    .modal__content-img {
+        width: 15%;
+    }
+    
+    .modal__image__series{
+        width: 40%;
+     }
+
+    .modal__content--resume,
+    .modal__content__champions {
+        font-size: 2rem;
+    }
+    
+    .modal__content--text {
+        font-size: 2rem;
+    }
+    
+    .modal__content--title {
+        font-size: 4rem;
+    }
+    
+
+    .modal__content__button {
+        font-size: 1.8rem;
+    }
+    
+    .nav{
+        border-bottom: var(--secondary-color-dark) 0.5rem solid;
+    }
+    
+    .nav__toggle{
+        display: none;
+    }
+    
+    .nav__menu{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav__menu li{
+        display: block;
+    }
+
+    .menu__logo{
+        height:11rem;  
+        margin:2rem; 
+    }
+
+    
+    .menu__logo img{
+        height:100%;
+    }
+
+    .button__modal{
+        width: fit-content;
+        margin-right: 3rem;
+        padding: 0;
+        color: var(--secondary-color);
+        font-size: 2rem;
+        border-top: none;
+        background-color:transparent;
+    }
+    
+
+    .button__modal:hover{
+        text-shadow: var(--secondary-color-light) 0rem 0rem 1rem;
+    }
+    #orderlist,
+    #filterlist {
+        margin: 3.5rem 3rem 3rem 3rem;
+        padding: 0.5rem 0rem 0.5rem 0rem;
+        width: 20%;
+    }
+
+
+}
